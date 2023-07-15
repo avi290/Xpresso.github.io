@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Gateway Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #d3d9e1;
+      color: #105664;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="number"] {
+      width: 80%;
+      padding: 5px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 5px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Payment Gateway Example</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Payment Details</h2>
+      <form id="payment-form">
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="">Select Payment Method</option>
+          <option value="upi">UPI</option>
+          <option value="visa">Visa Card</option>
+          <option value="bank">Bank Payment</option>
+        </select>
+        
+        <div id="upi-details" style="display: none;">
+          <label for="upi-id">UPI ID:</label>
+          <input type="text" id="upi-id" name="upi-id">
+        </div>
+        
+        <div id="visa-details" style="display: none;">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" name="card-number">
+          
+          <label for="expiry">Expiry Date:</label>
+          <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+          
+          <label for="cvv">CVV:</label>
+          <input type="number" id="cvv" name="cvv">
+        </div>
+        
+        <div id="bank-details" style="display: none;">
+          <label for="bank-name">Bank Name:</label>
+          <input type="text" id="bank-name" name="bank-name">
+          
+          <label for="account-number">Account Number:</label>
+          <input type="text" id="account-number" name="account-number">
+        </div>
+        
+        <button type="submit">Pay Now</button>
+      </form>
+    </section>
+    
+    <section id="payment-response" style="display: none;">
+      <h2>Payment Response</h2>
+      <p id="payment-status"></p>
+      <p id="payment-message"></p>
+    </section>
+  </main>
+  
+  <script>
+    // JavaScript code to handle payment form submission
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+
+      var paymentMethod = document.getElementById('payment-method').value;
+      var paymentStatus;
+      var paymentMessage;
+      
+      if (paymentMethod === 'upi') {
+        var upiId = document.getElementById('upi-id').value;
+        // Simulate UPI payment processing
+        paymentStatus = upiId ? 'success' : 'failure';
+        paymentMessage = paymentStatus === 'success' ? 'UPI payment successful.' : 'UPI payment failed.';
+      } else if (paymentMethod === 'visa') {
+        var cardNumber = document.getElementById('card-number').value;
+        // Simulate Visa card payment processing
+        paymentStatus = cardNumber ? 'success' : 'failure';
+        paymentMessage = paymentStatus === 'success' ? 'Visa card payment successful.' : 'Visa card payment failed.';
+      } else if (paymentMethod === 'bank') {
+        var bankName = document.getElementById('bank-name').value;
+        var accountNumber = document.getElementById('account-number').value;
+        // Simulate bank payment processing
+        paymentStatus = bankName && accountNumber ? 'success' : 'failure';
+        paymentMessage = paymentStatus === 'success' ? 'Bank payment successful.' : 'Bank payment failed.';
+      }
+      
+      // Hide the payment form
+      document.getElementById('payment-form').style.display = 'none';
+
+      // Display the payment response
+      document.getElementById('payment-response').style.display = 'block';
+      document.getElementById('payment-status').textContent = 'Status: ' + paymentStatus.toUpperCase();
+      document.getElementById('payment-message').textContent = 'Message: ' + paymentMessage;
+    });
+    
+    // JavaScript code to handle payment method selection
+    document.getElementById('payment-method').addEventListener('change', function() {
+      var selectedMethod = this.value;
+      
+      // Hide all payment details
+      document.getElementById('upi-details').style.display = 'none';
+      document.getElementById('visa-details').style.display = 'none';
+      document.getElementById('bank-details').style.display = 'none';
+      
+      // Show the selected payment details
+      if (selectedMethod === 'upi') {
+        document.getElementById('upi-details').style.display = 'block';
+      } else if (selectedMethod === 'visa') {
+        document.getElementById('visa-details').style.display = 'block';
+      } else if (selectedMethod === 'bank') {
+        document.getElementById('bank-details').style.display = 'block';
+      }
+    });
+  </script>
+  
+  <footer>
+    &copy; 2023 Payment Gateway Example. All rights reserved.
+  </footer>
+</body>
+</html>

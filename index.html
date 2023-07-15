@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rentals website</title>
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- box icons -->
+    <link rel="stylesheet" href=" <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+   
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- logo to be pasted in src -->
+        <a href="#" class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FglA6NANTDLf4e-1R2SyyTED393Rdzh2rDp70HvFXs374CLvm7NA-1fHnvSRIcZN1mY&usqp=CAU" alt=""></a> 
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ride">Ride</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            
+
+        </ul>
+        <div class="header-btn"></div>
+        <a href="signup.html" class="Sign-Up">Sign-Up</a>
+        <a href="signin.html" class="Sign-in">Sign-In</a>
+    </header>
+    <!--Home-->
+    <section class ="home" id="home">
+        <div class="text">
+            <h1><span>looking</span> to <br>Rent for bike</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adi <br> pisicing elit. Fuga,ut qui.</p>
+            <div class="app-stores">
+                <img src="data:image/png;base64,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" alt="">
+                <img src="img/512x512.png" alt="">   <!--not getting the image--><!--time:14:16-->
+            </div>
+        </div>
+        <div class="form-container">
+            <form action="">
+                <div class="input-box">
+                    <span>Location</span>
+                    <input type="search" name="" id="" placeholder="Search places">
+                </div>
+                <div class="input-box">
+                    <span>pick-up Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="input-box">
+                    <span>return Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <input type="submit" name="" id="" class="btn">
+            </form>
+        </div>
+    </section>
+    <!--Ride-->
+    <section class="ride" id="ride">
+        <div class="heading">
+            <span>How its work</span>
+            <h1>Rent with 3 easy Steps</h1>
+        </div>
+        <div class="ride-container">
+            <div class="box">
+                <box-icon type='solid' name='map'></box-icon>
+
+                <h2>choose A Location</h2>
+                <p>loremm ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ab, inventore at quos natus reiciendis temporibus labore harum, ratione sunt repudiandae iure aspernatur accasamus libero qui?</p>
+            </div>
+            <div class="box">
+                <box-icon  type='solid' name='calendar-x'></box-icon>
+                <i class='bx bxs-calender-check'></i>
+                <h2>Pick-up date</h2>
+                <p>loremm ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ab, inventore at quos natus reiciendis temporibus labore harum, ratione sunt repudiandae iure aspernatur accasamus libero qui?</p>
+            </div>
+
+            <div class="box">
+                <box-icon name='calendar-check'></box-icon>
+               <i class='bx bxs-calander-star'></i>
+                <h2>Book a Bike</h2>
+                <p>loremm ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ab, inventore at quos natus reiciendis temporibus labore harum, ratione sunt repudiandae iure aspernatur accasamus libero qui?</p>
+            </div>
+        </div>
+    </<section>
+        <!-- services -->
+        <section class="services" id="services">
+        <div class="heading">
+            <span>Best Services</span>
+            <h1>Explore out top Deals <br> From Top Rated Delears</h1>
+        </div>
+        <div class="Services-containers">
+            <div class="box-img">
+                <img src="https://images.unsplash.com/photo-1561811565-6ed172b54cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9uZGElMjBtb3RvcmN5Y2xlfGVufDB8fDB8fHww&auto=format&fit=crop&w=930&q=620" alt="">
+            </div>
+            <p>Royal Enfield</p>
+            <h3>Excellent service</h3>
+            <h2>Rs120-Rs150 <span>/hr</span></h2>
+            <a href="pick.html" class="btn">Rent Now</a>
+            <br>
+        </div>
+   
+        <div class="box-img">
+            <img src="https://media.zigcdn.com/media/model/2023/Jun/right-side-view-457321623_930x620.jpg" alt="">
+        </div>
+        <p>Honda Shine</p>
+        <h3>Excellent service</h3>
+        <h2>Rs100-Rs120 <span>/hr</span></h2>
+        <a href="pick.html" class="btn">Rent Now</a>
+        <br>
+    </div>
+
+    <div class="box-img">
+        <img src="https://www.fastwale.com/wp-content/uploads/2023/01/splendor-plus-xtec-1024x576.jpg.webp" alt="">
+    </div>
+    <p>Hero Splender</p>
+    <h3>Excellent service</h3>
+    <h2>Rs100-Rs110 <span>/hr</span></h2>
+    <a href="pick.html" class="btn">Rent Now</a>
+    <br>
+</div>
+
+<div class="box-img">
+    <img src="https://images.91wheels.com/assets/b_images/gallery/honda/activa-6g/honda-activa-6g-0-1590498957.png" alt="">
+</div>
+<p>Honda Activa </p>
+<h3>Excellent service</h3>
+<h2>Rs80-Rs100 <span>/hr</span></h2>
+<a href="pick.html" class="btn">Rent Now</a>
+<br>
+</div>
+
+<div class="box-img">
+    <img src="https://imgd.aeplcdn.com/1200x900/n/cw/ec/49454/maestro-rear-view-23.png?isig=0"alt="">
+</div>
+<p>Hero Mastestro</p>
+<h3>Excellent service</h3>
+<h2>Rs90-Rs100 <span>/hr</span></h2>
+<a href="pick.html" class="btn">Rent Now</a>
+<br>
+</div>
+</section>
+<!-- About -->
+<section class="about" id="about">
+    <div class="heading">
+        <span>About Us</span>
+        <h1>Best Customer Experience</h1>
+    </div>
+
+    <div class="about-container">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1614152412509-7a5afc18c75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=500" alt="">
+        </div>
+        <div class="about-text">
+            <span>About Us</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi cum tempora dolorum! Voluptatibus doloribus tempore quos obcaecati tempora dignissimos vero?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi suscipit aspernatur labore numquam magni hic.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- link to js -->
+    <script type="text/javascript" src="jm.js"></script>
+   
+</body>
+</html>

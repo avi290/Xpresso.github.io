@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Ride Booking Website</title>
+  <style>
+    body {
+        background-color: #aba3a3;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #900fb4;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 80%;
+      padding: 5px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #aba3a3;
+      border: none;
+      cursor: pointer;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .column {
+      float: left;
+      width: 50%;
+    }
+    
+    .features {
+      margin-top: 20px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Ride Booking Website</h1>
+  </header>
+  
+  <main>
+    <section id="booking-form">
+      <h2>Book Your Ride</h2>
+      <form>
+        <div class="column">
+          <label for="pickup-location">Pickup Location:</label>
+          <input type="text" id="pickup-location" size="5px" name="pickup-location" required>
+          
+          <label for="destination">Destination:</label>
+          <input type="text" id="destination" name="destination" required>
+          
+          <label for="duration">Time Duration:</label>
+          <input type="text" id="duration" name="duration" required>
+        </div>
+        
+        <div class="column">
+          <h3>Choose Your Profession:</h3>
+          <ul>
+            <li>
+              <input type="radio" id="profession-student" name="profession" value="student" required>
+              <label for="profession-student">Student</label><br>
+            </li>
+            <li>
+              <input type="radio" id="profession-employee" name="profession" value="employee">
+              <label for="profession-employee">Employee</label>
+            </li>
+            <li>
+              <input type="radio" id="profession-business" name="profession" value="business">
+              <label for="profession-business">Business</label>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="features">
+          <h3>Features of the Bike:</h3>
+          <ul>
+            <li>Comfortable seating</li>
+            <li>Powerful engine</li>
+            <li>Fuel-efficient</li>
+            <li>Stylish design</li>
+          </ul>
+        </div>
+        
+        <a href="payment.html">Confirm Booking</a>
+      </form>
+    </section>
+    
+    <section id="journey-message" style="display: none;">
+      <h2>Happy Journey!</h2>
+      <p>Thank you for confirming the bike for your journey. Have a safe and enjoyable trip!</p>
+    </section>
+  </main>
+  
+  <script>
+    // JavaScript code to handle form submission and display journey message
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+      
+      // Hide the booking form
+      document.getElementById('booking-form').style.display = 'none';
+      
+      // Display the journey message
+      document.getElementById('journey-message').style.display = 'block';
+    });
+  </script>
+  
+  <footer>
+    &copy; 2023 My Ride Booking Website. All rights reserved.
+  </footer>
+</body>
+</html>
